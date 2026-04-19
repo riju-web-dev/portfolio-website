@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+<title>Projects | Riju Bose</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+}
+
+/* Navbar */
+nav {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: cyan;
+}
+
+/* Section */
+#projects {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.2);
+}
+
+/* Image Placeholder */
+.img-box {
+    width: 100%;
+    height: 150px;
+    background: #333;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 12px;
+}
+
+/* Button */
+button {
+    padding: 8px 15px;
+    border: none;
+    background: cyan;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #00bcd4;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Riju Bose</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Projects -->
+<section id="projects">
+    <div class="container">
+
+        <h1>My Projects</h1>
+
+        <div class="grid">
+
+            <!-- Project 1 -->
+            <div class="card">
+                <div class="img-box">
+		<img src="7-Segment Display.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:10px;">
+		</div>
+                <h3>Interfacing 7-Segment Display with Arduino UNO</h3>
+                <p>This project demonstrates how to interface a 7-segment display with Arduino UNO to display numeric values.</p>
+		<a href="7-Segment Display.jpg" target="_blank">
+                <button onclick="showMsg('7 Segment Project')">View</button>
+		</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card">
+                <div class="img-box">
+		<img src="multiled.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:10px;">
+		</div>
+                <h3>Multiple LED Control using Arduino UNO</h3>
+                <p>This project demonstrates how to control multiple LEDs using Arduino and understand output control.</p>
+		<a href="multiled.jpg" target="blank">
+                <button onclick="showMsg('LED Project')">View</button>
+		</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="card">
+                <div class="img-box">
+		<img src="lcd.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:10px;">
+		</div>
+                <h3>LCD Display Interfacing with Arduino UNO</h3>
+                <p>This project shows how to display custom text on a 16x2 LCD using Arduino.</p>
+		<a href="lcd.jpg" target="blank">
+                <button onclick="showMsg('LCD Project')">View</button>
+		</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="card">
+                <div class="img-box">
+		<img src="button.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:10px;">
+		</div>
+                <h3>LED Control using Push Button with Arduino</h3>
+                <p>This project demonstrates controlling an LED using a push button input.</p>
+		<a href="button.jpg" target="blank">
+                <button onclick="showMsg('Button Project')">View</button>
+		</a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="card">
+                <div class="img-box">
+		<img src="Keypad.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:10px;">
+		</div>
+                <h3>4x4 Keypad Interfacing with Arduino UNO</h3>
+                <p>This project demonstrates taking user input using a keypad and displaying it via serial monitor.</p>
+		<a href="Keypad.jpg" target="blank">
+                <button onclick="showMsg('Keypad Project')">View</button>
+		</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+function showMsg(text) {
+    alert(text);
+}
+</script>
+
+</body>
+</html>

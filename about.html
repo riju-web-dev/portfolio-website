@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+<title>About | Riju Bose</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+}
+
+/* Navbar */
+nav {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: cyan;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* Tech Image */
+.tech-img {
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Riju Bose</h2>
+	<ul>
+        <li><a href="index.html">Home</a></li>
+	<li><a href="about.html">About</a></li>
+	<li><a href="skills.html">Skills</a></li>
+	<li><a href="project.html">Projects</a></li>
+	<li><a href="contact.html">Contact</a></li>
+ </ul>
+
+   </nav>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+
+        <h1>About Me</h1>
+
+        <!-- Tech Image -->
+        <img src="tech.jpg" class="tech-img" alt="Tech Image">
+
+        <!-- Intro -->
+        <div class="card">
+            <p>
+            Hello! My name is <b>Riju Bose</b>. I am currently pursuing the NIELIT O Level course.
+            I have a strong interest in web development and enjoy creating simple and user-friendly websites.
+            I am learning HTML, CSS, JavaScript along with basic C, Python and IoT.
+            I always try to improve my skills and explore new technologies step by step.
+            My goal is to build a successful career in the IT field.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="card">
+            <h2>Education</h2>
+            <p>NIELIT O Level (Pursuing)</p>
+            <p>Web Development (HTML, CSS, JavaScript)</p>
+            <p>Programming (C, Python)</p>
+            <p>IoT Fundamentals</p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
