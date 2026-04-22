@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+    <style>
+  body {
+    font-family: Arial;
+    background: #1e1e2f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #2c2c3e;
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* glass effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .error { color: red; }
+        .success { color: green; }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Password Validation</h2>
+
+        <form onsubmit="return validatePassword()">
+            
+            <div class="input-box">
+                <label>Password:</label><br>
+                <input type="password" id="password">
+                <span class="eye-btn" onclick="togglePassword('password')">👁️</span>
+            </div><br>
+
+            <div class="input-box">
+                <label>Confirm Password:</label><br>
+                <input type="password" id="confirmPassword">
+                <span class="eye-btn" onclick="togglePassword('confirmPassword')">👁️</span>
+            </div><br>
+
+            <p id="message"></p>
+
+            <button type="submit">Submit</button>
+        </form>
+
+<div style="text-align:center; margin-top:20px;">
+    <a href="https://riju-web-dev.github.io/portfolio-website/" 
+       style="color:#667eea; text-decoration:none; font-weight:bold;">
+       ⬅ Back to Portfolio
+    </a>
+</div>
+    </div>
+
+    <script>
+        function togglePassword(id) {
+            let input = document.getElementById(id);
+            input.type = (input.type === "password") ? "text" : "password";
+        }
+
+        function validatePassword() {
+            let pwd = document.getElementById("password").value;
+            let confirmPwd = document.getElementById("confirmPassword").value;
+            let message = document.getElementById("message");
+
+            if (pwd === "" || confirmPwd === "") {
+                message.textContent = "Both fields are required.";
+                message.className = "error";
+                return false;
+            }
+
+            if (pwd !== confirmPwd) {
+                message.textContent = "Passwords do NOT match!";
+                message.className = "error";
+                return false;
+            }
+
+            message.textContent = "Passwords match!";
+            message.className = "success";
+            return true;
+        }
+    </script>
+
+</body>
+</html>
