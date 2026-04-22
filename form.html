@@ -1,4 +1,6 @@
+https://riju-web-dev.github.io/portfolio-website/project.html
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 <head>
     <title>Create Account</title>
@@ -6,7 +8,7 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 10px;
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #667eea, #764ba2);
 
@@ -19,10 +21,11 @@
         .card {
             background: #fff;
             padding: 30px;
-            width: 320px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             text-align: center;
+            width: 90%;
+            max-width: 350px;
         }
 
         h2 {
@@ -55,6 +58,8 @@
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .gender-options label {
@@ -80,13 +85,25 @@
         button:hover {
             background: #5a67d8;
         }
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 500;
+}
 
+.back-btn:hover {
+    text-decoration: underline;
+}
     </style>
 </head>
 
 <body>
 
     <div class="card">
+        <a href="" class="back-btn">⬅ Back</a>
         <h2>Create Account</h2>
 
         <form>
