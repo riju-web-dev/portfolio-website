@@ -1,123 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Validation</title>
-    <style>
-  body {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Validation</title>
+
+<style>
+body {
     font-family: Arial;
-    background: #1e1e2f;
-    color: white;
+    background: linear-gradient(to right, #141e30, #243b55); /* same as portfolio */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
-
 .container {
-    background: #2c2c3e;
+    background: rgba(0,0,0,0.7);
+    color: white;
     padding: 25px;
     border-radius: 12px;
-    backdrop-filter: blur(10px); /* glass effect */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    width: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    width: 320px;
 }
 
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-        }
 
-        .input-box {
-            position: relative;
-        }
+.input-box {
+    position: relative;
+    margin-bottom: 15px;
+}
 
-        .eye-btn {
-            position: absolute;
-            right: 10px;
-            top: 35px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222;
+    color: white;
+    border: 1px solid #555;
+}
+.eye-btn {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    cursor: pointer;
+}
 
-        .error { color: red; }
-        .success { color: green; }
+.error { color: red; }
+.success { color: green; }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+button {
+    width: 100%;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-        button:hover {
-            background: #5a67d8;
-        }
-    </style>
+button:hover {
+    background: #5a67d8;
+}
+
+.back {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back a {
+    text-decoration: none;
+    color: #667eea;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h2>Password Validation</h2>
+<div class="container">
+    <h2>Create Account</h2>
 
-        <form onsubmit="return validatePassword()">
-            
-            <div class="input-box">
-                <label>Password:</label><br>
-                <input type="password" id="password">
-                <span class="eye-btn" onclick="togglePassword('password')">👁️</span>
-            </div><br>
+    <form onsubmit="return validatePassword()">
 
-            <div class="input-box">
-                <label>Confirm Password:</label><br>
-                <input type="password" id="confirmPassword">
-                <span class="eye-btn" onclick="togglePassword('confirmPassword')">👁️</span>
-            </div><br>
+        <div class="input-box">
+            <label>Password:</label>
+            <input type="password" id="password">
+            <span class="eye-btn" onclick="togglePassword('password')">👁️</span>
+        </div>
 
-            <p id="message"></p>
+        <div class="input-box">
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword">
+            <span class="eye-btn" onclick="togglePassword('confirmPassword')">👁️</span>
+        </div>
 
-            <button type="submit">Submit</button>
-        </form>
+        <p id="message"></p>
 
-<div style="text-align:center; margin-top:20px;">
-    <a href="https://riju-web-dev.github.io/portfolio-website/" 
-       style="color:#667eea; text-decoration:none; font-weight:bold;">
-       ⬅ Back to Portfolio
-    </a>
-</div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="back">
+        <a href="https://riju-web-dev.github.io/portfolio-website/">⬅ Back to Portfolio</a>
     </div>
 
-    <script>
-        function togglePassword(id) {
-            let input = document.getElementById(id);
-            input.type = (input.type === "password") ? "text" : "password";
-        }
+</div>
 
-        function validatePassword() {
-            let pwd = document.getElementById("password").value;
-            let confirmPwd = document.getElementById("confirmPassword").value;
-            let message = document.getElementById("message");
+<script>
+function togglePassword(id) {
+    let input = document.getElementById(id);
+    input.type = (input.type === "password") ? "text" : "password";
+}
 
-            if (pwd === "" || confirmPwd === "") {
-                message.textContent = "Both fields are required.";
-                message.className = "error";
-                return false;
-            }
+function validatePassword() {
+    let pwd = document.getElementById("password").value;
+    let confirmPwd = document.getElementById("confirmPassword").value;
+    let message = document.getElementById("message");
 
-            if (pwd !== confirmPwd) {
-                message.textContent = "Passwords do NOT match!";
-                message.className = "error";
-                return false;
-            }
+    if (pwd === "" || confirmPwd === "") {
+        message.textContent = "Both fields are required.";
+        message.className = "error";
+        return false;
+    }
 
-            message.textContent = "Passwords match!";
-            message.className = "success";
-            return true;
-        }
-    </script>
+    if (pwd !== confirmPwd) {
+        message.textContent = "Passwords do NOT match!";
+        message.className = "error";
+        return false;
+    }
+
+    message.textContent = "Passwords match!";
+    message.className = "success";
+    return true;
+}
+</script>
 
 </body>
 </html>
