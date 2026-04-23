@@ -5,7 +5,7 @@
 <title>Projects | Riju Bose</title>
 
 <style>
-body {
+body { height: auto;
     margin: 0;
     font-family: Arial;
     background: linear-gradient(to right, #141e30, #243b55);
@@ -42,14 +42,20 @@ nav ul li a:hover {
 #projects {
     padding: 60px 20px;
     text-align: center;
+    
 }
 
 .container {
     max-width: 1100px;
     margin: auto;
+    padding: 0 15px;
 }
 
 /* Tabs */
+.tabs {
+    margin-bottom: 20px;
+}
+
 .tabs button {
     margin: 5px;
     padding: 10px 18px;
@@ -64,12 +70,20 @@ nav ul li a:hover {
     background: #00bcd4;
 }
 
+/* Titles */
+h2 {
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color:white;
+}
+
 /* Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+	
 }
 
 /* Card */
@@ -78,14 +92,11 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 10px;
     transition: 0.3s;
-
     width: 100%;
-    max-width: 350px;
-    margin: 0 auto; 
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     background: rgba(255,255,255,0.2);
 }
 
@@ -110,13 +121,42 @@ nav ul li a:hover {
     background: #00bcd4;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
     nav {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .img-box img {
+        height: auto;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#web-title{ color: cyan;
+}
+#iot-title{color: cyan;
+}	
 </style>
 </head>
 
@@ -147,7 +187,8 @@ nav ul li a:hover {
     <button onclick="showCategory('web')">Web Projects</button>
 </div>
 
-<!-- IoT Projects -->
+<!-- IoT -->
+<h2 id="iot-title">IoT Projects</h2>
 <div id="iot" class="grid">
 
 <div class="card">
@@ -156,9 +197,7 @@ nav ul li a:hover {
     </div>
     <h3>7-Segment Display with Arduino</h3>
     <p>Display numbers using Arduino UNO.</p>
-    <a href="7-Segment Display.jpg">
-        <button>View</button>
-    </a>
+    <a href="7-Segment Display.jpg"><button>View</button></a>
 </div>
 
 <div class="card">
@@ -167,9 +206,7 @@ nav ul li a:hover {
     </div>
     <h3>Multiple LED Control</h3>
     <p>Control multiple LEDs using Arduino.</p>
-    <a href="multiled.jpg">
-        <button>View</button>
-    </a>
+    <a href="multiled.jpg"><button>View</button></a>
 </div>
 
 <div class="card">
@@ -178,9 +215,7 @@ nav ul li a:hover {
     </div>
     <h3>LCD Display</h3>
     <p>Display text using 16x2 LCD.</p>
-    <a href="lcd.jpg">
-        <button>View</button>
-    </a>
+    <a href="lcd.jpg"><button>View</button></a>
 </div>
 
 <div class="card">
@@ -189,9 +224,7 @@ nav ul li a:hover {
     </div>
     <h3>Push Button LED</h3>
     <p>Control LED with button input.</p>
-    <a href="button.jpg">
-        <button>View</button>
-    </a>
+    <a href="button.jpg"><button>View</button></a>
 </div>
 
 <div class="card">
@@ -200,14 +233,10 @@ nav ul li a:hover {
     </div>
     <h3>Keypad Input</h3>
     <p>Take input using keypad.</p>
-    <a href="Keypad.jpg">
-        <button>View</button>
-    </a>
+    <a href="Keypad.jpg"><button>View</button></a>
 </div>
-
 </div>
-
-<!-- Web Projects -->
+<h2 id="web-title">Web Projects</h2>
 <div id="web" class="grid" style="display:none;">
 
 <div class="card">
@@ -216,21 +245,29 @@ nav ul li a:hover {
     </div>
     <h3>Password Validation Form</h3>
     <p>Password match + show/hide toggle using JavaScript.</p>
-    <a href="java.html" target="_blank">
-        <button>View</button>
-    </a>
+    <a href="java.html" target="_blank"><button>View</button></a>
 </div>
+
 <div class="card">
     <div class="img-box">
         <img src="form.png">
     </div>
     <h3>Create Account Form</h3>
     <p>Create Account Form using HTML & CSS</p>
-    <a href="form.html" target="_blank">
-        <button>View</button>
-    </a>
+    <a href="form.html" target="_blank"><button>View</button></a>
 </div>
+
+<div class="card">
+    <div class="img-box">
+        <img src="Todo.png">
+    </div>
+    <h3>Task Manager (To-Do App)</h3>
+    <p>A simple To-Do List app to manage daily tasks using JavaScript.</p>
+    <a href="todo.html" target="_blank"><button>View</button></a>
 </div>
+
+</div>
+
 </div>
 </section>
 
@@ -240,17 +277,29 @@ function showCategory(category) {
     let iot = document.getElementById("iot");
     let web = document.getElementById("web");
 
+    let iotTitle = document.getElementById("iot-title");
+    let webTitle = document.getElementById("web-title");
+
     if (category === "iot") {
         iot.style.display = "grid";
         web.style.display = "none";
+
+        iotTitle.style.display = "block";
+        webTitle.style.display = "none";
     } 
     else if (category === "web") {
         iot.style.display = "none";
         web.style.display = "grid";
+
+        iotTitle.style.display = "none";
+        webTitle.style.display = "block";
     } 
     else {
         iot.style.display = "grid";
         web.style.display = "grid";
+
+        iotTitle.style.display = "block";
+        webTitle.style.display = "block";
     }
 }
 </script>
