@@ -82,7 +82,7 @@ h2 {
 .grid {
     display: grid;
      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 60px;
+    gap: 40px;
 	
 }
 
@@ -121,6 +121,13 @@ h2 {
     background: #00bcd4;
 }
 
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
 
     nav {
@@ -137,42 +144,27 @@ h2 {
         margin: 8px 0;
     }
 
-    /* 🔥 Grid fix */
     .grid {
         grid-template-columns: 1fr;
-        gap: 20px; /* spacing add */
+        gap: 20px;
     }
 
-    /* 🔥 Card full width */
     .card {
         width: 100%;
-        margin: 0 auto;
     }
 
-    /* 🔥 Image fix */
     .img-box img {
         height: auto;
     }
 
-    /* 🔥 Container padding fix */
     .container {
         padding: 0 10px;
     }
 
-    /* 🔥 Buttons wrap */
     .tabs {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .tabs button {
-        margin: 5px;
-    }
-}
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
