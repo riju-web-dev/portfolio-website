@@ -81,8 +81,9 @@ h2 {
 /* Grid */
 .grid {
     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+}
 	
 }
 
@@ -121,14 +122,20 @@ h2 {
     background: #00bcd4;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
-		gap: 30px;
+        gap: 30px;
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr !important; /* 🔥 force apply */
+        gap: 20px !important;
+    }
 
     nav {
         flex-direction: column;
@@ -142,15 +149,6 @@ h2 {
 
     nav ul li {
         margin: 8px 0;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .card {
-        width: 100%;
     }
 
     .img-box img {
@@ -167,7 +165,6 @@ h2 {
         justify-content: center;
     }
 }
-
 #web-title{ color: cyan;
 }
 #iot-title{color: cyan;
